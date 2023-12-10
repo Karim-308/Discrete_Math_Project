@@ -23,7 +23,7 @@ int modInverse(int A, int M) {
 
 int main() {
     int a, b;
-    a = 7, b = 2;
+    a = 7, b = 7;
 
     string msg;
     cin >> msg;
