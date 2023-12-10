@@ -20,7 +20,7 @@ int modInverse(int a, int m) {
 }
 
 int main() {
-    int a = 7, b = 2;
+    int a = 7, b = 7;
 
     string msg;
     getline(cin, msg); // Allowing input with spaces and multiple lines
