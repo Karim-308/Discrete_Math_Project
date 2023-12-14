@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+char alphabet[] = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 int gcd(int x, int y) {
     if (y == 0)
@@ -26,7 +26,7 @@ int main() {
 
     string deciphered;
 
-    int aInverse = modInverse(a, 26);
+    int aInverse = modInverse(a, 27);
 
     for (int i = 0; i < msg.length(); i++) {
         if (isalpha(msg[i])) {
@@ -35,7 +35,7 @@ int main() {
             while (ch != alphabet[index]) {
                 index++;
             }
-            deciphered += alphabet[(aInverse * ((index - b +26)) % 26)];
+            deciphered += alphabet[(aInverse * ((index - b +27)) % 27)];
         } else {
             deciphered += msg[i]; // Keep non-alphabetic characters unchanged
         }
