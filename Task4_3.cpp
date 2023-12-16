@@ -82,6 +82,7 @@ string decipher(string msg, int a, int b) {
     string deciphered;
 
     // Calculate the modular inverse of 'a' under modulo 27.
+    // aInverse = 15
     int aInverse = modInverse(a, 27);
 
     // Iterate through each character in the message.
@@ -129,6 +130,7 @@ string decipherExtended(string msg, int a, int b) {
     string deciphered;
 
     // Calculate the modular inverse of 'a' under modulo 93.
+    // aInverse = 40
     int aInverse = modInverse(a, 93);
 
     // Iterate through each character in the extended message.
