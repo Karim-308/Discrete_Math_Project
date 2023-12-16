@@ -70,6 +70,8 @@ int modInverse(int base, int mod) {
  * The Affine Cipher is a type of monoalphabetic substitution cipher, where each letter
  * in the plaintext is mapped to its numeric equivalent, encrypted, and then converted back to a letter.
  * This function performs the decryption using the Affine Cipher with parameters 'a' and 'b'.
+ * It only deciphers Capital letter
+ * It ignores small characters, the digits and special characters and appends them to the deciphered message unchanged
  *
  * @param msg The message to be deciphered.
  * @param a The multiplicative key in the Affine Cipher.
@@ -83,21 +85,33 @@ string decipher(string msg, int a, int b) {
     int aInverse = modInverse(a, 27);
 
     // Iterate through each character in the message.
-    for (int i = 0; i < msg.length(); i++) {
+    for (char ch : msg) {
+        
+         // Check if the character is alphabetic or a space.
+        if ((isalpha(ch) && isupper(ch)) || ch == ' ') {
+            
+
         int index = 0;
 
         // Find the index of the current character in the alphabet.
-        while (msg[i] != alphabet[index]) {
+        while (ch != alphabet[index]) {
             index++;
         }
 
         // Apply the Affine Cipher decryption formula and append the result to the deciphered message.
         deciphered += alphabet[aInverse * (index - b +27 ) % 27];
+        }
+        
+        else
+        
+        deciphered+=ch;  //ignores small characters, the digits and special characters and appends them to the deciphered message unchanged
     }
 
     // Return the deciphered message.
     return deciphered;
 }
+
+
 
 /**
  * @brief Decipher an extended message using the Affine Cipher with the given parameters.
