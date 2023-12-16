@@ -138,7 +138,9 @@ int main() {
     // Define the Affine Cipher parameters.
     int a = 7, b = 7;
     
+    // Asking the user to enter the message
     cout<<"Enter the message to be deciphered\n";
+    
     // Get the message from the user.
     // in our case, it should be ELYPCOGLIOGOXOQTGXDF
     string msg;
